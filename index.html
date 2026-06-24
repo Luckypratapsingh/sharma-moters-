@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharma Motors - Indian Bikes Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #222; color: white; padding: 20px; text-align: center; }
+        nav { background: #333; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .hero { background: #e2e2e2; padding: 50px; text-align: center; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        
+        /* Bike Section styling */
+        .bike-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .bike-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+        .bike-img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; background-color: #ddd; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555; }
+        .price { color: #d9534f; font-size: 1.2rem; font-weight: bold; margin: 10px 0; }
+        
+        /* Form styling */
+        .booking-section { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 600px; margin: 20px auto; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        
+        .btn { background: #ff4500; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-size: 1rem; font-weight: bold; cursor: pointer; width: 100%; text-decoration: none; display: inline-block; }
+        .btn:hover { background: #e03e00; }
+        
+        footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sharma Motors 🏍️</h1>
+        <p>Sabse Bharosemand Indian Bikes Ka Thikaana</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#bikes">Our Bikes</a>
+        <a href="#booking">Book A Bike</a>
+    </nav>
+
+    <div class="hero" id="home">
+        <h2>Apni Sapno Ki Indian Bike Khareedein</h2>
+        <p>Splendor se lekar Royal Enfield tak, sab kuch ek hi jagah par aur sabse kam daam me.</p>
+    </div>
+
+    <div class="container" id="bikes">
+        <h2 style="text-align: center; margin-bottom: 30px;">Hamari Bikes & Price List</h2>
+        <div class="bike-grid">
+            
+            <!-- Bike 1 -->
+            <div class="bike-card">
+                <!-- Aap yahan src="" ke andar asli bike ki photo ka link daal sakte hain -->
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500" alt="Royal Enfield" class="bike-img">
+                <h3>Royal Enfield Classic 350</h3>
+                <p>Pure Indian Swag aur Dumdar Power!</p>
+                <div class="price">₹ 1,93,000 - ₹ 2,25,000*</div>
+                <a href="#booking" class="btn">Abhi Book Karein</a>
+            </div>
+
+            <!-- Bike 2 -->
+            <div class="bike-card">
+                <img src="https://images.unsplash.com/photo-1622185135505-2d795003994a?w=500" alt="Hero Splendor" class="bike-img">
+                <h3>Hero Splendor Plus</h3>
+                <p>India Ki Sabse Zyada Mileage Aur Bharosa.</p>
+                <div class="price">₹ 75,000 - ₹ 78,000*</div>
+                <a href="#booking" class="btn">Abhi Book Karein</a>
+            </div>
+
+            <!-- Bike 3 -->
+            <div class="bike-card">
+                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=500" alt="Bajaj Platina" class="bike-img">
+                <h3>Bajaj Platina 100</h3>
+                <p>Jhatka Mana Hai! Shandaar Comfort aur Average.</p>
+                <div class="price">₹ 68,000 - ₹ 72,000*</div>
+                <a href="#booking" class="btn">Abhi Book Karein</a>
+            </div>
+
+        </div>
+
+        <!-- Booking Form Section -->
+        <div class="booking-section" id="booking">
+            <h2 style="text-align: center; color: #ff4500;">🏍️ Bike Online Booking Form</h2>
+            <p style="text-align: center; font-size: 0.9rem; color: #666;">Kripya apni sahi details bharein, hum aapse jald hi sampark karenge.</p>
+            
+            <form id="bikeForm">
+                <div class="form-group">
+                    <label for="name">Customer Ka Naam (Full Name):</label>
+                    <input type="text" id="name" placeholder="Apna naam likhein" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Booking Ki Tareeh (Date):</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bikeSelect">Bike Chunein (Select Bike):</label>
+                    <select id="bikeSelect" required>
+                        <option value="">-- Bike Select Karein --</option>
+                        <option value="Royal Enfield Classic 350">Royal Enfield Classic 350</option>
+                        <option value="Hero Splendor Plus">Hero Splendor Plus</option>
+                        <option value="Bajaj Platina 100">Bajaj Platina 100</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="aadhar">Aadhar Card Number:</label>
+                    <input type="text" id="aadhar" placeholder="12-digit Aadhar number" pattern="[0-9]{12}" required>
+                </div>
+
+                <button type="submit" class="btn">Booking Details Bhejein</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <h3>Contact Us - Sharma Motors</h3>
+        <p>📧 Email: <a href="mailto:yashsharma16sep2010@gmail.com" style="color: #ff4500;">yashsharma16sep2010@gmail.com</a></p>
+        <p>*Note: Diye gaye prices badal sakte hain. Shorwoom par aakar sampark karein.</p>
+        <p>© 2026 Sharma Motors. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript code jo data ko aapki Gmail par bhejega -->
+    <script>
+        document.getElementById('bikeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Form ki values nikalna
+            var name = document.getElementById('name').value;
+            var mobile = document.getElementById('mobile').value;
+            var date = document.getElementById('date').value;
+            var bike = document.getElementById('bikeSelect').value;
+            var aadhar = document.getElementById('aadhar').value;
+            
+            // Gmail ke liye subject aur body taiyar karna
+            var emailId = "yashsharma16sep2010@gmail.com";
+            var subject = "Nayi Bike Booking Request - " + bike;
+            var body = "Sharma Motors - Nayi Booking Detail:\n\n" +
+                       "1. Customer Name: " + name + "\n" +
+                       "2. Mobile Number: " + mobile + "\n" +
+                       "3. Booking Date: " + date + "\n" +
+                       "4. Selected Bike: " + bike + "\n" +
+                       "5. Aadhar Number: " + aadhar + "\n\n" +
+                       "Kripya is customer se jaldi baat karein.";
+            
+            // Mailto link open karna
+            var mailtoUrl = "mailto:" + emailId + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+            window.location.href = mailtoUrl;
+        });
+    </script>
+
+</body>
+</html>
